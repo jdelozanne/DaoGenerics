@@ -22,6 +22,7 @@ public class Product implements Serializable{
     
     @Id
     @GeneratedValue
+    @Column
     private int id;
     @Column
     private String naam;
@@ -32,6 +33,7 @@ public class Product implements Serializable{
     }
 
     public Product(String naam, int aantal) {
+        
         this.naam = naam;
         this.aantal = aantal;
     } 

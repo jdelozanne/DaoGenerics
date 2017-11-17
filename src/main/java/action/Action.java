@@ -22,8 +22,9 @@ public class Action {
  
  public  void saveProduct() {
      
-       Product p = new Product("naam", 3);
-     AbstractDaoGenerics dao = (AbstractDaoGenerics) new ConcreteDaoGenerics(Product.class);
+       
+     AbstractDaoGenerics dao = new ConcreteDaoGenerics(Product.class);
+      Product p = new Product("naam", 3);
       dao.save(p);
  
    
@@ -35,7 +36,7 @@ public class Action {
      */
     public static void main(String[] args) {
        Action a = new Action();
-               //a.saveProduct();
+               a.saveProduct();
       
         
     }
