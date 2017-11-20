@@ -17,9 +17,7 @@ import javax.persistence.Id;
  * @author julia
  */
 @Entity
-
-public class Product implements Serializable{
-    
+public class Account implements Serializable {
     
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -27,21 +25,19 @@ public class Product implements Serializable{
     private int id;
     @Column
     private String naam;
-    @Column(nullable = true)
-    private int aantal;
 
-    public Product() {
+    public Account() {
     }
-    public Product(String naam, int aantal) {
-        this.naam = naam;
-        this.aantal = aantal;
-    } 
 
-    public Product(int id, String naam, int aantal) {
+    public Account(String naam) {
+        this.naam = naam;
+    }
+
+    public Account(int id, String naam) {
         this.id = id;
         this.naam = naam;
-        this.aantal = aantal;
-    } 
+    }
+    
     public int getId() {
         return id;
     }
@@ -49,4 +45,5 @@ public class Product implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
+    
 }

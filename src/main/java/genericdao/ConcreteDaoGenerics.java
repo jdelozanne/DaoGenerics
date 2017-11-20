@@ -12,6 +12,10 @@ package genericdao;
  */
 public class ConcreteDaoGenerics <T> extends AbstractDaoGenerics<T> implements InterfaceDaoGenerics<T>{
 
+    public ConcreteDaoGenerics() {
+        super();
+    }
+    
     public ConcreteDaoGenerics(Class<T> type) {
         super(type);
     }

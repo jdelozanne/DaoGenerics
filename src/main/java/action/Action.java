@@ -5,6 +5,7 @@
  */
 package action;
 
+import entity.Account;
 import genericdao.AbstractDaoGenerics;
 import genericdao.InterfaceDaoGenerics;
 import entity.Product;
@@ -21,22 +22,25 @@ public class Action {
  
  
  public  void saveProduct() {
-     
-       
      AbstractDaoGenerics dao = new ConcreteDaoGenerics(Product.class);
       Product p = new Product("naam", 3);
       dao.save(p);
- 
-   
-      
    }   
-        
+       
+public  void saveAccount() {
+     Account a = new Account("naam");
+     AbstractDaoGenerics dao = new ConcreteDaoGenerics(a.getClass());
+      
+      dao.save(a);
+   }    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        Action a = new Action();
                a.saveProduct();
+               a.saveAccount();
+               
       
         
     }
